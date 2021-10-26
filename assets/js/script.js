@@ -85,3 +85,82 @@ const APIController = function () {
         },
     };
 };
+
+//public methods
+return {
+
+    //method to get input fields
+    inputField() {
+        return {
+            genre: document.querySelector(DOMElements.selectGenre),
+            playlist: document.querySelector(DOMElements.selectPlaylist),
+            tracks: document.querySelector(DOMElements.divSonglist),
+            submit: document.querySelector(DOMElements.buttonSubmit),
+            songDetail: document.querySelector(DOMElements.divSongDetail)
+        }
+    },
+
+    // need methods to create select list option
+    createGenre(text, value) {
+        const html = `<option value="${value}">${text}</option>`;
+        document.querySelector(DOMElements.selectGenre).insertAdjacentHTML('beforeend', html);
+    }, 
+
+    createPlaylist(text, value) {
+        const html = `<option value="${value}">${text}</option>`;
+        document.querySelector(DOMElements.selectPlaylist).insertAdjacentHTML('beforeend', html);
+    },
+
+    // need method to create a track list group item 
+    createTrack(id, name) {
+        const html = `<a href="#" class="list-display" id="${id}">${name}\n</a>`;
+        document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
+    },
+
+    // need method to create the song detail
+    createTrackDetail(img, title, artist) {
+
+        const detailDiv = document.querySelector(DOMElements.divSongDetail);
+        // any time user clicks a new song, we need to clear out the song detail div
+        detailDiv.innerHTML = '';
+
+        const html = 
+        `
+        <div class="image">
+            <img src="${img}" alt="">        
+        </div>
+        <div class="row">
+            <label for="Genre">${title}:</label>
+        </div>
+        <div class="artist">
+            <label for="artist">By ${artist}:</label>
+        </div> 
+        `;
+
+        detailDiv.insertAdjacentHTML('beforeend', html)
+    },
+
+    resetTrackDetail() {
+        this.inputField().songDetail.innerHTML = '';
+    },
+
+    resetTracks() {
+        this.inputField().tracks.innerHTML = '';
+        this.resetTrackDetail();
+    },
+
+    resetPlaylist() {
+        this.inputField().playlist.innerHTML = '';
+        this.resetTracks();
+    },
+    
+    storeToken(value) {
+        document.querySelector(DOMElements.hfToken).value = value;
+    },
+
+    getStoredToken() {
+        return {
+            token: document.querySelector(DOMElements.hfToken).value
+        }
+    }
+}
