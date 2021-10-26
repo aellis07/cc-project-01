@@ -66,4 +66,22 @@ const APIController = function () {
         const data = await result.json();
         return data;
     };
+
+    return {
+        getToken() {
+            return _getToken();
+        },
+        getGenres(token) {
+            return _getGenres(token);
+        },
+        getPlaylistByGenre(token, genreId) {
+            return _getPlaylistByGenre(token, genreId);
+        },
+        getTracks(token, tracksEndPoint) {
+            return _getTracks(token, tracksEndPoint);
+        },
+        getTrack(token, trackEndPoint) {
+            return _getTrack(token, trackEndPoint);
+        },
+    };
 };
