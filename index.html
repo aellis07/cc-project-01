@@ -1,30 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="./assets/css/style.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+
+
+        <title>Project 1</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <!-- Music -->
+            <div class='musicChart'>        
+				<form action=''>
+					
+					<input type='hidden' id='hidden_token'>
+					<div class='listOptions trn'>
+						<label for='Genre'>Genre:</label>
+						<select name='' id='select_genre'>
+							<option>Select...</option>                    
+						</select>
+					</div>
+					<div class='options trn'>
+						<label for='Genre' >Playlists:</label>
+						<select name='' id='select_playlist'>
+							<option>Select...</option>                    
+						</select>
+					</div>                  
+					<div class='submit'>
+						<button type='submit' id='btn_submit' >Search</button>
+					</div>          
+				</form>        
+				<div class='row'>
+					<div class='musicList'>
+						<div class='list-group song-list'>
+							
+						</div>                                             
+					</div>
+					<div id='song-detail'>                
+				</div>
+				   
+			</div>
+            <div></div>
+            <!-- Title (name) -->
+            <div></div>
+            <!-- Weather -->
+            <div></div>
+        </header>
+        <main>
+            <!-- Column -->
+            <div>
+                <!-- card -->
+                <div></div>
+            </div>
+        </main>
+    </body>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="./assets/js/script.js"></script>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <title>Project 1</title>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <!-- Music -->
-      <div></div>
-      <!-- Title (name) -->
-      <div></div>
-      <!-- Weather -->
-      <div></div>
-    </header>
-    <main>
-      <!-- Column -->
-      <div>
-        <!-- card -->
-        <div></div>
-      </div>
-    </main>
-  </body>
+
+
 </html>

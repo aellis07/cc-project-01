@@ -1,11 +1,21 @@
-window.onSpotifyWebPlaybackSDKReady = () => {
-    const token =
-      "[BQBLAH4n-wN2yiCfoXvMt179Ok1Rn-tEFA-O9bU5RDVSrPKzZ1iWOFbx8OiY_h82AGY4P7YSiNmSxMxT2AyEBX1pDXsDAT3GEMXhpqWBwhvu9J4Xg0jbKCNhKL-nWjF1fcvCAlXOjKfEj2KcYMcWtT34gEErZCTxHHYc7RVk]";
-    const player = new Spotify.Player({
-      name: "Daily Deck Player",
-      getOAuthToken: (cb) => {
-        cb(token);
-      },
-      volume: 0.5,
-    });
+const APIController = function() {
+    
+    const clientId = '6cdb4aaca51d482791dc3281c2aabefc';
+    const clientSecret = 'b36f404230dd41689917861898d30714';
+
+    // private methods
+    const _getToken = async () => {
+
+        const result = await fetch('https://accounts.spotify.com/api/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded', 
+                'Authorization' : 'Basic ' + btoa( clientId + ':' + clientSecret)
+            },
+            body: 'grant_type=client_credentials'
+        });
+
+        const data = await result.json();
+        return data.access_token;
+    }
 }
