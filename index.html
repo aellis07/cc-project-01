@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- feature/css-hardcode -->
+	<!-- feature/css-hardcode -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,8 +17,12 @@
 		<header class="level is-max-desktop">
 			<!-- Title (name) -->
 			<div class="is-size-1">Daily Deck</div>
-			<!-- Weather -->
-			<div>[Weather]</div>
+
+			<!-- weather -->
+			<div>
+				<ion-icon item-start name="rainy-outline" class="icon"></ion-icon>
+				<span class="is-size-3">72°</span>
+			</div>
 		</header>
 		<div class="columns has-background-dark">
 			<!-- Column -->
@@ -52,21 +56,29 @@
 				</div>
 			</div>
 			<div class="column">
-				<div class="title is-3 has-text-weight-bold has-text-light">Music</div>
-				<div class="card">[placeholder]</div>
-			</div>
-			<div class="column">
-				<div class="title is-3 has-text-weight-bold has-text-light">Videos</div>
+				<div class="title is-3 has-text-weight-bold has-text-light">
+					Spotify
+				</div>
 				<div class="card">[placeholder]</div>
 			</div>
 			<div class="column">
 				<div class="title is-3 has-text-weight-bold has-text-light">
-					S T O N K S
+					Youtube
+				</div>
+				<div class="card">[placeholder]</div>
+			</div>
+			<div class="column">
+				<div class="title is-3 has-text-weight-bold has-text-light">
+					Twitter
 				</div>
 				<div class="card">[placeholder]</div>
 			</div>
 		</div>
 		<script src="./assets/js/script.js"></script>
 		<script src="https://sdk.scdn.co/spotify-player.js"></script>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
 	</body>
 </html>
