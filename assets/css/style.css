@@ -1,0 +1,18 @@
+/* * {
+	border: 1px solid red;
+} */
+
+body {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#weather-icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#weather-temp {
+	display: inline-block;
+	vertical-align: middle;
+}
