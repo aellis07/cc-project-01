@@ -8,3 +8,12 @@ body {
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
+#weather-icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#weather-temp {
+	display: inline-block;
+	vertical-align: middle;
+}
