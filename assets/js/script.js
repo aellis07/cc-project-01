@@ -28,6 +28,7 @@ function onYouTubeIframeAPIReady() {
         width: "640",
         playerVars: {
             listType: "playlist",
+            list: "PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
         },
         events: {
             onReady: onPlayerReady,
