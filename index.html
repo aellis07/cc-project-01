@@ -1,42 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="has-background-dark" lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./assets/css/style.css" />
 		<title>Project 1</title>
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
 		/>
-		<link rel="stylesheet" href=".assets/style.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 	<body>
 		<!-- Header -->
-		<header class="hero is-primary">
-			<div class="hero-body, level">
-				<!-- Music -->
-				<div>
-					<h3>Song of the Day</h3>
-					<p>[Title] - <span>[Album]</span></p>
-					<p>[Artist]</p>
-				</div>
-				<!-- Title (name) -->
-				<div>
-					<h1>[user]'s Deck</h1>
-				</div>
-				<!-- Weather -->
-				<div>[Weather]</div>
-			</div>
-		</header>
-		<main>
-			<!-- Column -->
+		<header class="navbar">
+			<!-- Music -->
 			<div>
-				<!-- card -->
-				<div></div>
+				<h3>Song of the Day</h3>
+				<p>[Title] - <span>[Album]</span></p>
+				<p>[Artist]</p>
 			</div>
-		</main>
+			<!-- Title (name) -->
+			<div>
+				<h1>[user]'s Deck</h1>
+			</div>
+			<!-- Weather -->
+			<div>[Weather]</div>
+		</header>
+		<div class="columns">
+			<!-- Column -->
+			<div class="column">
+				<h2>News</h2>
+				<div class="card">
+					<div class="card-image">
+						<figure class="image is-4by3">
+							<img
+								src="https://bulma.io/images/placeholders/1280x960.png"
+								alt="Placeholder image"
+							/>
+						</figure>
+					</div>
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content">
+								<p class="title is-4">[Headline]</p>
+							</div>
+						</div>
+						<div class="content">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, rerum ad id consectetur in voluptas delectus placeat itaque obcaecati eaque amet iste molestiae sequi ducimus. Quaerat atque iure nisi dolore?
+							<br/>
+							<br/>
+							<time>[Published Date/Time]</time>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+		</div>
 		<script src="./assets/js/script.js"></script>
 		<script src="https://sdk.scdn.co/spotify-player.js"></script>
 	</body>
