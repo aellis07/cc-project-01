@@ -26,7 +26,9 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player("youtubeCard", {
         height: "390",
         width: "640",
-        playerVars: {},
+        playerVars: {
+            listType: "playlist",
+        },
         events: {
             onReady: onPlayerReady,
             onStateChange: onPlayerStateChange,
