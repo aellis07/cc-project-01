@@ -7,6 +7,10 @@ body {
 	margin-right: 5%;
 }
 
+<<<<<<< HEAD
+=======
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
+>>>>>>> main
 #weather-icon {
 	display: inline-block;
 	vertical-align: middle;
