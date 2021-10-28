@@ -14,6 +14,8 @@ function getGeolocation() {
             //     })
         });
     }
+    // check if saved, don't prompt?
+    // button to prompt? (weather)
 }
 
 getGeolocation();
