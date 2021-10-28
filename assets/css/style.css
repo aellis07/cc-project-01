@@ -2,6 +2,11 @@
 	border: 1px solid red;
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,300;1,400&family=Zen+Kurenaido&display=swap');
+/* font-family: 'Fira Sans', sans-serif; */
+/* font-family: 'Zen Kurenaido', sans-serif; */
+
+
 body {
 	margin-left: 5%;
 	margin-right: 5%;
@@ -16,3 +21,102 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 }
+
+.btn.dropdown-toggle {
+    width: 150px;
+    text-align: center;
+}
+
+span.caret {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+}
+
+label {
+    padding-top: 5px;
+}
+
+.form-label {
+    padding-left: 0px !important;
+}
+
+.form-control {
+    border-radius: 100px;
+}
+
+.btn-success {
+    background-color: #3b7d4a im !important;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: #4daf64;
+}
+
+img.track  {
+    border: 3px solid #494949;
+}
+
+
+body {
+    height: 100vh;
+    margin: 0;
+
+    background-color: #f5f5f5;
+}
+
+/* .musicChart {
+    height: 100vh;
+
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+
+} */
+
+/* .musicList {
+    margin: 1px;
+
+    background-color: #fff;
+
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 3em;
+    color: #594255;
+
+    overflow: scroll;
+
+    -webkit-flex: 1;
+    flex: 1;
+} */
+
+.list-display {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.submit, .musicList{
+    text-align: center;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+.genre .artist {
+    color: red;
+
+}
+
+.list-display{
+    color: goldenrod;
+}
+

@@ -59,7 +59,36 @@
 				<div class="title is-3 has-text-weight-bold has-text-light">
 					Spotify
 				</div>
-				<div class="card">[placeholder]</div>
+				<div class="card" class='musicChart'>        
+					<form action=''>
+						<input type='hidden' id='hidden_token'>
+						<div class='listOptions trn'>
+							<label for='Genre'>Genre:</label>
+							<select name='' id='select_genre'>
+								<option>Select...</option>                    
+							</select>
+						</div>
+						<div class='options trn'>
+							<label for='Genre' >Playlists:</label>
+							<select name='' id='select_playlist'>
+								<option>Select...</option>                    
+							</select>
+						</div>                  
+						<div class='submit'>
+							<button type='submit' id='btn_submit' >Search</button>
+						</div>          
+					</form>        
+					<div class='row'>
+						<div class='musicList'>
+							<div class='list-group song-list'>
+								
+							</div>                                             
+						</div>
+						<div id='song-detail'>                
+					</div>
+					   
+				</div>
+			</div>
 			</div>
 			<div class="column">
 				<div class="title is-3 has-text-weight-bold has-text-light">
