@@ -101,7 +101,19 @@ if (localStorage.getItem("stocks") === null) {
             return res.json();
         })
         .then((data) => {
+            // appened an unordered list to the stockContainer list
+            // then appened individual list items to the unorderd list
             localStorage.setItem("stocks", JSON.stringify(data));
             console.log(data);
         });
 }
+
+// function stockContainer(data) {
+//     var stockCard = document.getElementById("stocks-card");
+
+//     //  var aaplTicker = aapl.ticker;
+// }
+// var aapl = JSON.parse(localStorage.getItem("data[1].ticker"));
+// console.log(aapl);
+// stockContainer();
+// // stockCard.textContent = aaplTicker;
