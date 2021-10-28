@@ -2,7 +2,7 @@
 	border: 1px solid red;
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,300;1,400&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,900;1,300;1,400;1,900&family=Zen+Kurenaido&display=swap');
 /* font-family: 'Fira Sans', sans-serif; */
 /* font-family: 'Zen Kurenaido', sans-serif; */
 
@@ -46,16 +46,29 @@ label {
     border-radius: 100px;
 }
 
-.btn-success {
-    background-color: #3b7d4a im !important;
-    border-radius: 100px;
+
+#btn_submit {
+    background-color: #4CAF50; /* Green */
     border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px .5px;
+    transition-duration: 0.4s;
     cursor: pointer;
+    background-color: white; 
+    color: black; 
+    /* border: 2px solid #4CAF50; */
 }
 
-.btn-success:hover {
-    background-color: #4daf64;
+#btn_submit:hover {
+    background-color: #4CAF50;
+    color: white;
 }
+
 
 img.track  {
     border: 3px solid #494949;
@@ -105,6 +118,8 @@ body {
     flex-direction: column;
     font-size: 13px;
     font-family: 'Fira Sans', sans-serif;
+    text-align: left;
+    padding-left: 30%;
 }
 
 .submit, .musicList{
@@ -119,5 +134,18 @@ body {
 
 .list-display{
     color: goldenrod;
+}
+
+.image img {
+    height: 10%;
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divide {
+    margin: auto;
+    width: 190px;
 }
 
