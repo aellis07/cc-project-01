@@ -18,9 +18,24 @@ body {
 	vertical-align: middle;
 }
 
-#main-content-box{
+#main-content-box {
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 20px;
 	border-radius: 10px;
+}
+
+#spotify-card {
+	height: 390px;
+}
+
+#stocks-card {
+	height: 390px;
+}
+
+@media screen and (min-width: 1490px) {
+	body {
+		width: 1300px;
+		margin: auto;
+	}
 }
