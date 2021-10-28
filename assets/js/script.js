@@ -78,14 +78,30 @@ function stopVideo() {
 
 // ===============================================================
 // Stocks API
-
-fetch(
-    "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
-)
-    .then((res) => {
-        console.log(res);
-        return res.json();
-    })
-    .then((data) => {
-        console.log(data);
-    });
+//check if we have stocks already in locastorage
+// no ? run the fetch
+// yes ? use the stocks from local storage
+// fetch(
+//     "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
+// )
+//     .then((res) => {
+//         console.log(res);
+//         return res.json();
+//     })
+//     .then((data) => {
+//         localStorage.setItem("stocks", JSON.stringify(data));
+//         console.log(data);
+//     });
+if (localStorage.getItem("stocks") === null) {
+    fetch(
+        "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
+    )
+        .then((res) => {
+            console.log(res);
+            return res.json();
+        })
+        .then((data) => {
+            localStorage.setItem("stocks", JSON.stringify(data));
+            console.log(data);
+        });
+}
