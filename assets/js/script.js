@@ -382,7 +382,7 @@ function stopVideo() {
 // News API
 // api url gets stored in variable
 const API_URL =
-	"http://api.mediastack.com/v1/news?access_key=6610298920a05b1cbc9139d1d5b79485&languages=en&countries=us&categories=technology&limit=10";
+	"https://api.mediastack.com/v1/news?access_key=6610298920a05b1cbc9139d1d5b79485&languages=en&countries=us&categories=technology&limit=10";
 // function to call api objects in the array
 async function getNewsArticles() {
 	const response = await fetch(API_URL);
