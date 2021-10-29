@@ -14,4 +14,4 @@ In this project we used elements from the following APIs:
 
 The majority of Daily Deck was constructed using the Bulma framework with additional custom CSS.
 
-![Daily Deck Screenshot](./assets/images/DDScreen.png)
+![Daily Deck Screenshot](./assets/images/Animation.gif)
