@@ -105,14 +105,17 @@ if (localStorage.getItem("stocks") === null) {
             // then appened individual list items to the unorderd list
             // localStorage.setItem("stocks", JSON.stringify(data));
             console.log(data);
-            var stockTicker1 = data[1].ticker;
+            var stock1ticker = data[1].ticker;
             var stock1price = data[1].price;
-            // var stockThree = data[3].ticker, price;
+			var stock2ticker = data[2].ticker;
+            var stock2price = data[2].price;
 
-            console.log(stockTicker1);
+            console.log(stock1ticker);
             console.log(stock1price);
-            document.getElementById("stocks-card").textContent = stockTicker1;
-            document.getElementById("ticker-price").textContent = stock1price;
+            document.getElementById("ticker-name1").textContent = stock1ticker;
+            document.getElementById("ticker-price1").textContent = "$"+stock1price;
+            document.getElementById("ticker-name2").textContent = stock2ticker;
+            document.getElementById("ticker-price2").textContent = "$"+stock2price;
         });
 }
 // function stockContainer() {
