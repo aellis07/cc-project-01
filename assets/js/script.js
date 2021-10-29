@@ -107,13 +107,14 @@ if (localStorage.getItem("stocks") === null) {
             console.log(data);
         });
 }
+function stockContainer(data) {
+    var stockCard = document.getElementById("stocks-card");
+    var aaplTicker = aapl.ticker;
 
-// function stockContainer(data) {
-//     var stockCard = document.getElementById("stocks-card");
+    var aapl = JSON.parse(localStorage.getItem("stocks.ticker[1]"));
+    stockCard.textContent = aaplTicker;
+    console.log(aapl);
+    stockContainer();
 
-//     //  var aaplTicker = aapl.ticker;
-// }
-// var aapl = JSON.parse(localStorage.getItem("data[1].ticker"));
-// console.log(aapl);
-// stockContainer();
-// // stockCard.textContent = aaplTicker;
+    return res.json();
+}
