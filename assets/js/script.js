@@ -40,7 +40,7 @@ getGeolocation();
 // Change this to your API key between the single quotes ('):
 
 function getWeather(lat, lon) {
-    var api_key = "ff5cface57f37613ff923c54e4f51a51";
+    var api_key = "11c4c7d120bdbf4576aa8f9f0b1b315d";
     var requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&units=imperial&appid=`;
 
     fetch(requestUrl + api_key)
@@ -49,11 +49,14 @@ function getWeather(lat, lon) {
         })
         .then((data) => {
             console.log(data);
+
+            var tempFinal = data.current.temp;
+            console.log(tempFinal);
         });
-    var tempFinal = 45 + "°";
+    // console.log(fetch);
     document.getElementById("weatherWidget").textContent = tempFinal;
 }
-getWeather();
+// getWeather();
 // console.log(getWeather);
 
 // ===========================================================
