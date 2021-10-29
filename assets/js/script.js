@@ -339,7 +339,17 @@ function stopVideo() {
 // ===============================================================
 // News API
 
-fetch("http://api.mediastack.com/v1/news?access_key=6610298920a05b1cbc9139d1d5b79485&languages=en&countries=us&categories=technology&limit=10")
-    .then((response) => response.json())
-    .then((news) => console.log(news));
+const API_URL =
+    "http://api.mediastack.com/v1/news?access_key=6610298920a05b1cbc9139d1d5b79485&languages=en&countries=us&categories=technology&limit=10";
+
+    async function getNewsArticles() {
+        const response = await fetch(API_URL);
+        const json = await response.json();
+        console.log(json);
+    
+   };
+
+
+    
+    getNewsArticles();
 
