@@ -347,35 +347,104 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // This function creates an <iframe> (and YouTube player) after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady() {
-	player = new YT.Player("youtubeCard", {
-		height: "390",
-		width: "640",
-		playerVars: {
-			listType: "playlist",
-			list: "PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
-		},
-		events: {
-			onReady: onPlayerReady,
-			onStateChange: onPlayerStateChange,
-		},
-	});
+    player = new YT.Player("youtubeCard", {
+        height: "390",
+        width: "640",
+        playerVars: {
+            listType: "playlist",
+            list: "PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
+        },
+        events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange,
+        },
+    });
 }
 
 // The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-	event.target.playVideo();
+    event.target.playVideo();
 }
 
 // 5. The API calls this function when the player's state changes. The function indicates that when playing a video (state=1) the player should play for six seconds and then stop.
 var done = false;
 function onPlayerStateChange(event) {
-	if (event.data == YT.PlayerState.PLAYING && !done) {
-		setTimeout(stopVideo, 6000);
-		done = true;
-	}
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
 }
 function stopVideo() {
-	player.stopVideo();
+    player.stopVideo();
 }
 
 // ===============================================================
+// Stocks API
+//check if we have stocks already in locastorage
+// no ? run the fetch
+// yes ? use the stocks from local storage
+// fetch(
+//     "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
+// )
+//     .then((res) => {
+//         console.log(res);
+//         return res.json();
+//     })
+//     .then((data) => {
+//         localStorage.setItem("stocks", JSON.stringify(data));
+//         console.log(data);
+//     });
+if (localStorage.getItem("stocks") === null) {
+    fetch(
+        "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
+    )
+        .then((res) => {
+            console.log(res);
+            return res.json();
+        })
+        .then((data) => {
+            // appened an unordered list to the stockContainer list
+            // then appened individual list items to the unorderd list
+            // localStorage.setItem("stocks", JSON.stringify(data));
+            console.log(data);
+            var stock1ticker = data[1].ticker;
+            var stock1price = data[1].price;
+            var stock2ticker = data[2].ticker;
+            var stock2price = data[2].price;
+            var stock3ticker = data[3].ticker;
+            var stock3price = data[3].price;
+            var stock4ticker = data[4].ticker;
+            var stock4price = data[4].price;
+            var stock5ticker = data[5].ticker;
+            var stock5price = data[5].price;
+
+            // console.log(stock1ticker);
+            // console.log(stock1price);
+            document.getElementById("ticker-name1").textContent = stock1ticker;
+            document.getElementById("ticker-price1").textContent =
+                "$" + stock1price;
+            document.getElementById("ticker-name2").textContent = stock2ticker;
+            document.getElementById("ticker-price2").textContent =
+                "$" + stock2price;
+            document.getElementById("ticker-name3").textContent = stock3ticker;
+            document.getElementById("ticker-price3").textContent =
+                "$" + stock3price;
+            document.getElementById("ticker-name4").textContent = stock4ticker;
+            document.getElementById("ticker-price4").textContent =
+                "$" + stock4price;
+            document.getElementById("ticker-name5").textContent = stock5ticker;
+            document.getElementById("ticker-price5").textContent =
+                "$" + stock5price;
+        });
+}
+// function stockContainer() {
+//   var stockCard = document.getElementById("stocks-card");
+//  stockCard.textContent
+
+//     var aapl = JSON.parse(localStorage.getItem(data[1].ticker));
+//     console.log(aapl);
+//     stockContainer(data);
+
+//     //     return res.json();
+//
+// }
