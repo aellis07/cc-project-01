@@ -381,25 +381,27 @@ function stopVideo() {
 // ===============================================================
 // News API
 // api url gets stored in variable
-const API_URL =
-	"http://api.mediastack.com/v1/news?access_key=6610298920a05b1cbc9139d1d5b79485&languages=en&countries=us&categories=technology&limit=10";
+const API_URL = "https://gnews.io/api/v4/search?q=example&token=c8ac8a8719b6af5bc8c81e3898d2ddc5"
+
 // function to call api objects in the array
 async function getNewsArticles() {
 	const response = await fetch(API_URL);
 	const responseJson = await response.json();
-	const responseJsonData = responseJson.data
+	const responseJsonData = responseJson.articles
+	// console.log(responseJsonData);
     // variable stores each array object news letter
 	const news0 = responseJsonData[0]
     const news1 = responseJsonData[4]
 	const news2 = responseJsonData[2]
 	const news3 = responseJsonData[3]
-    console.log(news0.url)
+	// const newsImage0 = document.createElement('img');
     console.log(news0, news1, news2, news3);
 	// NEWS CARD 1
     document.getElementById("news-0-title").textContent = (news0.title)
 	document.getElementById("news-0-author").textContent = (news0.author)
     document.getElementById("news-0-content").textContent = (news0.description)
     document.getElementById("news-0-url").setAttribute('href', news0.url);
+	// document.getElementById("news-0-img").setAttribute('src', news0.image);
     // NEWS CARD 2
     document.getElementById("news-1-title").textContent = (news1.title)
 	document.getElementById("news-1-author").textContent = (news1.author)
