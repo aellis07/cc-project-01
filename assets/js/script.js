@@ -103,18 +103,26 @@ if (localStorage.getItem("stocks") === null) {
         .then((data) => {
             // appened an unordered list to the stockContainer list
             // then appened individual list items to the unorderd list
-            localStorage.setItem("stocks", JSON.stringify(data));
+            // localStorage.setItem("stocks", JSON.stringify(data));
             console.log(data);
+            var stockTicker1 = data[1].ticker;
+            var stock1price = data[1].price;
+            // var stockThree = data[3].ticker, price;
+
+            console.log(stockTicker1);
+            console.log(stock1price);
+            document.getElementById("stocks-card").textContent = stockTicker1;
+            document.getElementById("ticker-price").textContent = stock1price;
         });
 }
-function stockContainer(data) {
-    var stockCard = document.getElementById("stocks-card");
-    var aaplTicker = aapl.ticker;
+// function stockContainer() {
+//   var stockCard = document.getElementById("stocks-card");
+//  stockCard.textContent
 
-    var aapl = JSON.parse(localStorage.getItem("stocks.ticker[1]"));
-    stockCard.textContent = aaplTicker;
-    console.log(aapl);
-    stockContainer();
+//     var aapl = JSON.parse(localStorage.getItem(data[1].ticker));
+//     console.log(aapl);
+//     stockContainer(data);
 
-    return res.json();
-}
+//     //     return res.json();
+//
+// }
