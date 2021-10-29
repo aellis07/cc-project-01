@@ -9,7 +9,7 @@ In this project we used elements from the following APIs:
 -   Youtube
 -   Spotify
 -   OpenWeather
--   Media Stack
+-   Gnews.io
 -   Financial Modeling Prep
 
 The majority of Daily Deck was constructed using the Bulma framework with additional custom CSS.
