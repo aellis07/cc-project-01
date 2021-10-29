@@ -52,9 +52,9 @@ function getWeather(lat, lon) {
 
             var tempFinal = data.current.temp;
             console.log(tempFinal);
+            document.getElementById("weatherWidget").textContent = tempFinal;
         });
     // console.log(fetch);
-    document.getElementById("weatherWidget").textContent = tempFinal;
 }
 // getWeather();
 // console.log(getWeather);
