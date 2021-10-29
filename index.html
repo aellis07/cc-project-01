@@ -17,75 +17,96 @@
             <!-- Title (name) -->
             <div class="is-size-1">Daily Deck</div>
 
-            <!-- weather -->
-            <div>
-                <ion-icon
-                    item-start
-                    name="rainy-outline"
-                    class="icon"
-                ></ion-icon>
-                <span class="is-size-3">72°</span>
-            </div>
-        </header>
-        <div class="has-background-dark" id="main-content-box">
-            <div class="columns">
-                <!-- Column -->
-                <div class="column is-half">
-                    <div class="title is-3 has-text-weight-bold has-text-light">
-                        Youtube
-                    </div>
-                    <div id="youtubeCard" class="card">[placeholder]</div>
-                </div>
-                <div class="column">
-                    <div class="title is-3 has-text-weight-bold has-text-light">
-                        Spotify
-                    </div>
-                    <div class="card" id="spotify-card">
-                        <div class="musicChart">
-                            <form action="">
-                                <input type="hidden" id="hidden_token" />
-                                <div
-                                    class="listOptions"
-                                    style="text-align: center"
-                                >
-                                    <label for="Genre">Genre:</label>
-                                    <select name="" id="select_genre">
-                                        <option>Select...</option>
-                                    </select>
-                                </div>
-                                <div class="options" style="text-align: center">
-                                    <label for="Genre">Playlists:</label>
-                                    <select name="" id="select_playlist">
-                                        <option>Select...</option>
-                                    </select>
-                                </div>
-                                <div class="submit">
-                                    <button type="submit" id="btn_submit">
-                                        Search
-                                    </button>
-                                </div>
-                                <section class="divide">
-                                    ____________________________
-                                </section>
-                            </form>
-                            <div class="row">
-                                <div class="musicList">
-                                    <div class="list-group song-list"></div>
-                                </div>
-                                <section class="divide">
-                                    ____________________________
-                                </section>
-                                <div id="song-detail"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+			<!-- weather -->
+			<div>
+				<ion-icon
+					item-start
+					name="cloud-outline"
+					class="icon"
+				></ion-icon>
+				<span id="weatherWidget" class="is-size-3">0°</span>
+			</div>
+		</header>
+		<div class="has-background-dark" id="main-content-box">
+			<div class="columns">
+				<!-- Column -->
+				<div class="column is-half">
+					<div class="title is-3 has-text-weight-bold has-text-light">
+						Youtube
+					</div>
+					<div id="youtubeCard" class="card">[placeholder]</div>
+				</div>
+				<div class="column">
+					<div class="title is-3 has-text-weight-bold has-text-light">
+						Spotify
+					</div>
+					<div class="card" id="spotify-card">
+						<div class="musicChart">
+							<form action="">
+								<input type="hidden" id="hidden_token" />
+								<div
+									class="listOptions"
+									style="text-align: center"
+								>
+									<label for="Genre">Genre:</label>
+									<select name="" id="select_genre">
+										<option>Select...</option>
+									</select>
+								</div>
+								<div class="options" style="text-align: center">
+									<label for="Genre">Playlists:</label>
+									<select name="" id="select_playlist">
+										<option>Select...</option>
+									</select>
+								</div>
+								<div class="submit">
+									<button type="submit" id="btn_submit">
+										Search
+									</button>
+								</div>
+								<section class="divide">
+									____________________________
+								</section>
+							</form>
+							<div class="row">
+								<div class="musicList">
+									<div class="list-group song-list"></div>
+								</div>
+								<section class="divide">
+									____________________________
+								</section>
+								<div id="song-detail"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
                 <div class="column">
                     <div class="title is-3 has-text-weight-bold has-text-light">
                         Stocks
                     </div>
-                    <div class="card" id="stocks-card">[placeholder]</div>
+                    <div class="card" id="stocks-card">
+                        <div class="stocks-single">
+                            <p id="ticker-name1">[ticker]</p>
+                            <p id="ticker-price1">[price]</p>
+                        </div>
+                        <div class="stocks-single">
+                            <p id="ticker-name2">[ticker]</p>
+                            <p id="ticker-price2">[price]</p>
+                        </div>
+                        <div class="stocks-single">
+                            <p id="ticker-name3">[ticker]</p>
+                            <p id="ticker-price3">[price]</p>
+                        </div>
+                        <div class="stocks-single">
+                            <p id="ticker-name4">[ticker]</p>
+                            <p id="ticker-price4">[price]</p>
+                        </div>
+                        <div class="stocks-single">
+                            <p id="ticker-name5">[ticker]</p>
+                            <p id="ticker-price5">[price]</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="columns">
@@ -212,7 +233,7 @@
             </div>
             <div class="content has-text-centered">
                 <a href="https://github.com/sagegrayson/cc-project-01"
-                    >Project Github</a
+                    >github</a
                 >
             </div>
         </footer>

@@ -1,3 +1,64 @@
+// GEOLOCATION;
+
+// function getGeolocation() {
+//     // console.log();
+
+//     if (navigator.geolocation) {
+//         //check if geolocation is available
+//         navigator.geolocation.getCurrentPosition(
+//             function (position) {
+//                 console.log(
+//                     "Position from end positon",
+//                     position.coords.latitude,
+//                     position.coords.longitude
+//                 );
+//                 getWeather(position.coords.latitude, position.coords.longitude);
+//             },
+//             function (error) {
+//                 console.log(error);
+//             }
+//         );
+//     }
+// }
+
+function getGeolocation() {
+	// console.log();
+
+	if (navigator.geolocation) {
+		//check if geolocation is available
+		navigator.geolocation.getCurrentPosition(function (position) {
+			console.log(position);
+			getWeather(position.coords.latitude, position.coords.longitude);
+		});
+	}
+}
+
+getGeolocation();
+
+// ===========================================================
+// OPEN WEATHER
+// Change this to your API key between the single quotes ('):
+
+function getWeather(lat, lon) {
+	var api_key = "11c4c7d120bdbf4576aa8f9f0b1b315d";
+	var requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&units=imperial&appid=`;
+
+	fetch(requestUrl + api_key)
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => {
+			console.log(data);
+
+			var tempFinal = data.current.temp;
+			console.log(tempFinal);
+			document.getElementById("weatherWidget").textContent = Math.round(tempFinal)+"°";
+		});
+	// console.log(fetch);
+}
+// getWeather();
+// console.log(getWeather);
+
 // ============================================================
 //SPOTIFY API
 const APIController = (function () {
@@ -272,25 +333,6 @@ const APPController = (function (UICtrl, APICtrl) {
 
 // will need to call a method to load the genres on page load
 APPController.init();
-// GEOLOCATION
-function getGeolocation() {
-	if (navigator.geolocation) {
-		//check if geolocation is available
-		navigator.geolocation.getCurrentPosition(function (position) {
-			console.log(position);
-			// reverse geocoding?
-			// fetch( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false")
-			//     .then(function(response) {
-			//         return response.json()
-			//     })
-			//     .then(function(data) {
-			//         console.log(data);
-			//     })
-		});
-	}
-	// check if saved, don't prompt?
-	// button to prompt? (weather)
-}
 
 // // ============================================================
 // // YOUTUTBE API
@@ -376,3 +418,72 @@ async function getNewsArticles() {
 }
 
 getNewsArticles();
+// Stocks API
+//check if we have stocks already in locastorage
+// no ? run the fetch
+// yes ? use the stocks from local storage
+// fetch(
+//     "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
+// )
+//     .then((res) => {
+//         console.log(res);
+//         return res.json();
+//     })
+//     .then((data) => {
+//         localStorage.setItem("stocks", JSON.stringify(data));
+//         console.log(data);
+//     });
+if (localStorage.getItem("stocks") === null) {
+    fetch(
+        "https://financialmodelingprep.com/api/v3/actives?apikey=a0b34495f1b7cdb84c38ee2d58875f0a"
+    )
+        .then((res) => {
+            console.log(res);
+            return res.json();
+        })
+        .then((data) => {
+            // appened an unordered list to the stockContainer list
+            // then appened individual list items to the unorderd list
+            // localStorage.setItem("stocks", JSON.stringify(data));
+            console.log(data);
+            var stock1ticker = data[1].ticker;
+            var stock1price = data[1].price;
+            var stock2ticker = data[2].ticker;
+            var stock2price = data[2].price;
+            var stock3ticker = data[3].ticker;
+            var stock3price = data[3].price;
+            var stock4ticker = data[4].ticker;
+            var stock4price = data[4].price;
+            var stock5ticker = data[5].ticker;
+            var stock5price = data[5].price;
+
+            // console.log(stock1ticker);
+            // console.log(stock1price);
+            document.getElementById("ticker-name1").textContent = stock1ticker;
+            document.getElementById("ticker-price1").textContent =
+                "$" + stock1price;
+            document.getElementById("ticker-name2").textContent = stock2ticker;
+            document.getElementById("ticker-price2").textContent =
+                "$" + stock2price;
+            document.getElementById("ticker-name3").textContent = stock3ticker;
+            document.getElementById("ticker-price3").textContent =
+                "$" + stock3price;
+            document.getElementById("ticker-name4").textContent = stock4ticker;
+            document.getElementById("ticker-price4").textContent =
+                "$" + stock4price;
+            document.getElementById("ticker-name5").textContent = stock5ticker;
+            document.getElementById("ticker-price5").textContent =
+                "$" + stock5price;
+        });
+}
+// function stockContainer() {
+//   var stockCard = document.getElementById("stocks-card");
+//  stockCard.textContent
+
+//     var aapl = JSON.parse(localStorage.getItem(data[1].ticker));
+//     console.log(aapl);
+//     stockContainer(data);
+
+//     //     return res.json();
+//
+// }
