@@ -21,10 +21,10 @@
 			<div>
 				<ion-icon
 					item-start
-					name="rainy-outline"
+					name="cloud-outline"
 					class="icon"
 				></ion-icon>
-				<span class="is-size-3">72°</span>
+				<span id="weatherWidget" class="is-size-3">0°</span>
 			</div>
 		</header>
 		<div class="has-background-dark" id="main-content-box">
@@ -40,36 +40,45 @@
 					<div class="title is-3 has-text-weight-bold has-text-light">
 						Spotify
 					</div>
-					<div class="card" id="spotify-card"><div class="musicChart">
-                        <form action="">
-                            <input type="hidden" id="hidden_token" />
-                            <div class="listOptions" style="text-align: center;">
-                                <label for="Genre">Genre:</label>
-                                <select name="" id="select_genre">
-                                    <option>Select...</option>
-                                </select>
-                            </div>
-                            <div class="options" style="text-align: center;">
-                                <label for="Genre">Playlists:</label>
-                                <select name="" id="select_playlist">
-                                    <option>Select...</option>
-                                </select>
-                            </div>
-                            <div class="submit">
-                                <button type="submit" id="btn_submit">
-                                    Search
-                                </button>
-                            </div>
-							<section class="divide">____________________________</section>
-                        </form>
-                        <div class="row">
-                            <div class="musicList">
-                                <div class="list-group song-list"></div>
-                            </div>
-							<section class="divide">____________________________</section>
-                            <div id="song-detail"></div>
-                        </div>
-                    </div></div>
+					<div class="card" id="spotify-card">
+						<div class="musicChart">
+							<form action="">
+								<input type="hidden" id="hidden_token" />
+								<div
+									class="listOptions"
+									style="text-align: center"
+								>
+									<label for="Genre">Genre:</label>
+									<select name="" id="select_genre">
+										<option>Select...</option>
+									</select>
+								</div>
+								<div class="options" style="text-align: center">
+									<label for="Genre">Playlists:</label>
+									<select name="" id="select_playlist">
+										<option>Select...</option>
+									</select>
+								</div>
+								<div class="submit">
+									<button type="submit" id="btn_submit">
+										Search
+									</button>
+								</div>
+								<section class="divide">
+									____________________________
+								</section>
+							</form>
+							<div class="row">
+								<div class="musicList">
+									<div class="list-group song-list"></div>
+								</div>
+								<section class="divide">
+									____________________________
+								</section>
+								<div id="song-detail"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="column">
