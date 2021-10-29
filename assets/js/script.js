@@ -345,8 +345,9 @@ const API_URL =
 async function getNewsArticles() {
 	const response = await fetch(API_URL);
 	const responseJson = await response.json();
-	const responseJsonData = responseJson.data
-	console.log(responseJsonData);
+	const responseJsonData = responseJson.data;
+    const newsData = JSON.parse(responseJsonData);
+	console.log(newsData);
 }
 
 getNewsArticles();
