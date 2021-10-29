@@ -346,7 +346,9 @@ async function getNewsArticles() {
 	const response = await fetch(API_URL);
 	const responseJson = await response.json();
 	const responseJsonData = responseJson.data
-	console.log(responseJsonData);
+	const news0 = responseJsonData[0]
+	console.log(news0.author);
+	document.getElementById("news-0-title").textContent = (news0.author)
 }
 
 getNewsArticles();
