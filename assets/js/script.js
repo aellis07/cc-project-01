@@ -107,15 +107,32 @@ if (localStorage.getItem("stocks") === null) {
             console.log(data);
             var stock1ticker = data[1].ticker;
             var stock1price = data[1].price;
-			var stock2ticker = data[2].ticker;
+            var stock2ticker = data[2].ticker;
             var stock2price = data[2].price;
+            var stock3ticker = data[3].ticker;
+            var stock3price = data[3].price;
+            var stock4ticker = data[4].ticker;
+            var stock4price = data[4].price;
+            var stock5ticker = data[5].ticker;
+            var stock5price = data[5].price;
 
-            console.log(stock1ticker);
-            console.log(stock1price);
+            // console.log(stock1ticker);
+            // console.log(stock1price);
             document.getElementById("ticker-name1").textContent = stock1ticker;
-            document.getElementById("ticker-price1").textContent = "$"+stock1price;
+            document.getElementById("ticker-price1").textContent =
+                "$" + stock1price;
             document.getElementById("ticker-name2").textContent = stock2ticker;
-            document.getElementById("ticker-price2").textContent = "$"+stock2price;
+            document.getElementById("ticker-price2").textContent =
+                "$" + stock2price;
+            document.getElementById("ticker-name3").textContent = stock3ticker;
+            document.getElementById("ticker-price3").textContent =
+                "$" + stock3price;
+            document.getElementById("ticker-name4").textContent = stock4ticker;
+            document.getElementById("ticker-price4").textContent =
+                "$" + stock4price;
+            document.getElementById("ticker-name5").textContent = stock5ticker;
+            document.getElementById("ticker-price5").textContent =
+                "$" + stock5price;
         });
 }
 // function stockContainer() {
