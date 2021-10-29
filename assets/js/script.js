@@ -296,58 +296,83 @@ function getGeolocation() {
 // // YOUTUTBE API
 
 // // This code loads the IFrame Player API code asynchronously.
-// var tag = document.createElement("script");
+var tag = document.createElement("script");
 
-// tag.src = "https://www.youtube.com/iframe_api";
-// var firstScriptTag = document.getElementsByTagName("script")[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// // This function creates an <iframe> (and YouTube player) after the API code downloads.
-// var player;
-// function onYouTubeIframeAPIReady() {
-//     player = new YT.Player("youtubeCard", {
-//         height: "390",
-//         width: "640",
-//         playerVars: {
-//             listType: "playlist",
-//             list: "PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
-//         },
-//         events: {
-//             onReady: onPlayerReady,
-//             onStateChange: onPlayerStateChange,
-//         },
-//     });
-// }
+// This function creates an <iframe> (and YouTube player) after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player("youtubeCard", {
+        height: "390",
+        width: "640",
+        playerVars: {
+            listType: "playlist",
+            list: "PLrEnWoR732-BHrPp_Pm8_VleD68f9s14-",
+        },
+        events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange,
+        },
+    });
+}
 
-// // The API will call this function when the video player is ready.
-// function onPlayerReady(event) {
-//     event.target.playVideo();
-// }
+// The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
 
 // // 5. The API calls this function when the player's state changes. The function indicates that when playing a video (state=1) the player should play for six seconds and then stop.
-// var done = false;
-// function onPlayerStateChange(event) {
-//     if (event.data == YT.PlayerState.PLAYING && !done) {
-//         setTimeout(stopVideo, 6000);
-//         done = true;
-//     }
-// }
-// function stopVideo() {
-//     player.stopVideo();
-// }
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
 
 // ===============================================================
 // News API
-
+// api url gets stored in variable
 const API_URL =
 	"http://api.mediastack.com/v1/news?access_key=6610298920a05b1cbc9139d1d5b79485&languages=en&countries=us&categories=technology&limit=10";
-
+// function to call api objects in the array
 async function getNewsArticles() {
 	const response = await fetch(API_URL);
 	const responseJson = await response.json();
-	const responseJsonData = responseJson.data;
-    const newsData = JSON.parse(responseJsonData);
-	console.log(newsData);
+	const responseJsonData = responseJson.data
+    // variable stores each array object news letter
+	const news0 = responseJsonData[0]
+    const news1 = responseJsonData[4]
+	const news2 = responseJsonData[2]
+	const news3 = responseJsonData[3]
+    console.log(news0.url)
+    console.log(news0, news1, news2, news3);
+	// NEWS CARD 1
+    document.getElementById("news-0-title").textContent = (news0.title)
+	document.getElementById("news-0-author").textContent = (news0.author)
+    document.getElementById("news-0-content").textContent = (news0.description)
+    document.getElementById("news-0-url").setAttribute('href', news0.url);
+    // NEWS CARD 2
+    document.getElementById("news-1-title").textContent = (news1.title)
+	document.getElementById("news-1-author").textContent = (news1.author)
+    document.getElementById("news-1-content").textContent = (news1.description)
+    document.getElementById("news-1-url").setAttribute('href', news1.url);
+    // NEWS CARD 3
+    document.getElementById("news-2-title").textContent = (news2.title)
+	document.getElementById("news-2-author").textContent = (news2.author)
+    document.getElementById("news-2-content").textContent = (news2.description)
+    document.getElementById("news-2-url").setAttribute('href', news2.url);
+    // NEWS CARD 4
+    document.getElementById("news-3-title").textContent = (news3.title)
+	document.getElementById("news-3-author").textContent = (news3.author)
+    document.getElementById("news-3-content").textContent = (news3.description)
+    document.getElementById("news-3-url").setAttribute('href', news3.url);
 }
 
 getNewsArticles();
